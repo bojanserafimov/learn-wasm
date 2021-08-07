@@ -1,5 +1,7 @@
 # Learn wasm
 
+Just trying it out. Nothing to see here.
+
 ## Setup
 1. Install node and npm
 2. Install wabt `npm install -g wabt`
