@@ -9,7 +9,11 @@ async function main() {
     const module = await WebAssembly.compile(code);
     const instance = await WebAssembly.instantiate(module);
 
-    const memory = new WebAssembly.Memory({ initial: 2 }); // Size is in pages.
+    const memory = new WebAssembly.Memory({
+        initial: 2,  // Memory in wasm pages
+        maximum: 4,  // Memory in wasm pages
+        shared: false,  // TODO try shared
+    });
     const arrayBuffer = memory.buffer;
     const buffer = new Uint8Array(arrayBuffer);
 
